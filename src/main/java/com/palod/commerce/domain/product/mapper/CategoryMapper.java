@@ -3,6 +3,7 @@ package com.palod.commerce.domain.product.mapper;
 import java.util.List;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 import com.palod.commerce.domain.product.dto.CategoryDto;
 import com.palod.commerce.domain.product.entity.Category;
@@ -10,9 +11,11 @@ import com.palod.commerce.domain.product.entity.Category;
 @Mapper(componentModel = "spring")
 public interface CategoryMapper {
 
-	CategoryDto categoryToCategoryDto(Category category);
+	CategoryMapper INSTANCE = Mappers.getMapper(CategoryMapper.class);
 
-	Category categoryDtoToCategory(CategoryDto categoryDto);
+	CategoryDto toCategoryDto(Category category);
+
+	Category toCategory(CategoryDto categoryDto);
 
 	List<CategoryDto> toCategoryDtoList(List<Category> categoryList);
 }
