@@ -16,6 +16,8 @@ import lombok.Setter;
 @Setter
 public class ProductDto extends BaseDto {
 
+	private static final long serialVersionUID = 1L;
+
 	@NotNull
 	@Size(max = 100)
 	private String name;
@@ -32,7 +34,9 @@ public class ProductDto extends BaseDto {
 	private Long quantity;
 
 	@NotNull
-	private CategoryDto category;
+	private Long categoryId;
 
 	private List<ProductImageDto> productImageList;
+
+	private String userFullName;
 }

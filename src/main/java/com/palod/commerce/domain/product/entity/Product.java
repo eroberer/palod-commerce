@@ -40,7 +40,7 @@ public class Product extends BaseEntity {
 	@JoinColumn(name = "category_id", nullable = false)
 	private Category category;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<ProductImage> productImageList;
 
 	@ManyToOne(fetch = FetchType.LAZY)
