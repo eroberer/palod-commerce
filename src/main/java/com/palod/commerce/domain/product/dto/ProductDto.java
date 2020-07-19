@@ -8,6 +8,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.palod.commerce.domain.core.dto.BaseDto;
+import com.palod.commerce.domain.user.dto.UserDto;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -38,5 +39,5 @@ public class ProductDto extends BaseDto {
 
 	private List<ProductImageDto> productImageList;
 
-	private String userFullName;
+	private UserDto createdBy;
 }
