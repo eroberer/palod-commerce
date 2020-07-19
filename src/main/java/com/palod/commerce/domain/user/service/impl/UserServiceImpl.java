@@ -73,7 +73,7 @@ public class UserServiceImpl implements UserService {
 
 	private Set<Role> createBasicRole() {
 		Set<Role> basicRole = new HashSet<>();
-		basicRole.add(roleRepository.findByName("BASIC").orElse(null));
+		basicRole.add(roleRepository.findByName("ROLE_BASIC").orElse(null));
 		return basicRole;
 	}
 }
