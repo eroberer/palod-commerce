@@ -10,7 +10,7 @@ import lombok.Setter;
 @Setter
 public abstract class BaseDto implements Serializable {
 
-	private static final long serialVersionUID = 9101762958322959125L;
+	private static final long serialVersionUID = 1L;
 
 	private Long id;
 

@@ -17,7 +17,6 @@ public interface ProductMapper {
 
 	ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-	@Mapping(target = "userFullName", source = "createdBy.fullName")
 	@Mapping(target = "categoryId", source = "category.id")
 	ProductDto toProductDto(Product product);
 

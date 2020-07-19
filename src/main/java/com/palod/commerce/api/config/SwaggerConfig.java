@@ -1,4 +1,4 @@
-package com.palod.commerce.config;
+package com.palod.commerce.api.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
