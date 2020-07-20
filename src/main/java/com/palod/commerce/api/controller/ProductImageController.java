@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.palod.commerce.api.constant.ApiUrl;
+import com.palod.commerce.api.exception.ApiException;
+import com.palod.commerce.api.util.AuthUtil;
 import com.palod.commerce.domain.product.service.ProductImageService;
 
 import lombok.RequiredArgsConstructor;
@@ -19,11 +21,14 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping(ApiUrl.PRODUCT_IMAGES_URL)
 public class ProductImageController {
 
+	private final AuthUtil authUtil;
 	private final ProductImageService productImageService;
 
 	@PostMapping("/{productId}")
 	public ResponseEntity<Boolean> saveImage(@PathVariable(required = true) Long productId,
-			@RequestParam("file") MultipartFile file) {
+			@RequestParam("file") MultipartFile file) throws ApiException {
+		authUtil.checkProductOwnerOrHasAdminRole(productId);
+
 		try {
 			productImageService.saveImage(productId, file);
 			return ResponseEntity.ok().body(Boolean.TRUE);
@@ -32,8 +37,11 @@ public class ProductImageController {
 		}
 	}
 
-	@DeleteMapping("/{productImageId}")
-	public ResponseEntity<Boolean> deleteImage(@PathVariable(required = true) Long productImageId) {
+	@DeleteMapping("/{productId}/{productImageId}")
+	public ResponseEntity<Boolean> deleteImage(@PathVariable(required = true) Long productId,
+			@PathVariable(required = true) Long productImageId) throws ApiException {
+		authUtil.checkProductOwnerOrHasAdminRole(productId);
+
 		try {
 			productImageService.deleteImage(productImageId);
 			return ResponseEntity.ok().body(Boolean.TRUE);

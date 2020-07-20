@@ -9,18 +9,22 @@ import java.util.UUID;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.palod.commerce.domain.core.service.FileManagementService;
 
 @Service
 public class FileManagementServiceImpl implements FileManagementService {
-
+	
 	private Path rootDirectory;
+	
+	@Value("${upload.directory:upload}")
+	private String uploadDirectory;
 
 	@PostConstruct
 	public void initUploadPath() throws IOException {
-		this.rootDirectory = Paths.get("upload");
+		this.rootDirectory = Paths.get(uploadDirectory);
 
 		if (Files.notExists(rootDirectory)) {
 			Files.createDirectory(rootDirectory);
