@@ -1,5 +1,6 @@
 package com.palod.commerce;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -17,6 +18,8 @@ public class TestUtil {
 		Product product = new Product();
 		product.setId(id);
 		product.setName(name);
+		product.setAmount(new BigDecimal(25));
+		product.setQuantity(1L);
 		return product;
 	}
 
