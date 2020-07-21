@@ -15,6 +15,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+import com.palod.commerce.TestUtil;
 import com.palod.commerce.api.exception.ApiException;
 import com.palod.commerce.domain.user.dto.UserDto;
 import com.palod.commerce.domain.user.entity.User;
@@ -127,8 +128,7 @@ public class UserServiceTest {
 
 		User user = TestUtil.createDummyUser(null, email, passwordEncoder.encode(password), roleName);
 
-		Mockito.when(userRepository.findByEmail(Mockito.any(String.class))).thenReturn(Optional.of(user));
-		Mockito.when(userRepository.save(Mockito.any(User.class))).thenReturn(user);
+		Mockito.when(userRepository.findByEmail(Mockito.anyString())).thenReturn(Optional.of(user));
 
 		UserDto userDto = TestUtil.createDummyUserDto(null, email, password);
 

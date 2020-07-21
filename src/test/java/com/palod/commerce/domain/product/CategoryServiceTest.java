@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.google.common.collect.Lists;
+import com.palod.commerce.TestUtil;
 import com.palod.commerce.domain.product.dto.CategoryDto;
 import com.palod.commerce.domain.product.entity.Category;
 import com.palod.commerce.domain.product.repository.CategoryRepository;
@@ -54,5 +55,14 @@ public class CategoryServiceTest {
 		Mockito.verify(categoryRepository).findById(categoryId);
 	}
 
-	// To-Do : add save, update, delete method test
+	@Test
+	public void givenCategoryDto_whenSave_thenSaveCategory() {
+		Mockito.when(categoryRepository.save(Mockito.any(Category.class))).thenReturn(Mockito.any(Category.class));
+
+		CategoryDto categoryDto = TestUtil.createDummyCategoryDto(null, "test category");
+		categoryService.saveCategory(categoryDto);
+
+		Mockito.verify(categoryRepository).save(Mockito.any(Category.class));
+		Mockito.verifyNoMoreInteractions(categoryRepository);
+	}
 }
