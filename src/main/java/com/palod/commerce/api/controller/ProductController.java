@@ -45,9 +45,7 @@ public class ProductController {
 			@RequestBody(required = true) @Valid ProductDto productDto) throws ApiException {
 		authUtil.checkProductOwnerOrHasAdminRole(productId);
 
-		productDto.setCreatedBy(authUtil.getRegisteredUser());
 		productService.updateProduct(productId, productDto);
-
 	}
 
 	@DeleteMapping("/{productId}")
