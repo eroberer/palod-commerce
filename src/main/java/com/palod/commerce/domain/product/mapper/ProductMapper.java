@@ -22,7 +22,6 @@ public interface ProductMapper {
 
 	@InheritInverseConfiguration
 	@Mapping(target = "productImageList", ignore = true)
-	@Mapping(target = "createdBy", ignore = true)
 	Product toProduct(ProductDto productDto);
 
 	List<ProductDto> toProductDtoList(List<Product> productList);
