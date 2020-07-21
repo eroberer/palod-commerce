@@ -60,7 +60,7 @@ public class JwtTokenUtil {
 		return null;
 	}
 
-	public void validateToken(String token) {
+	public void validateToken(String token) throws Exception {
 		Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token);
 	}
 
