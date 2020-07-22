@@ -122,28 +122,28 @@ header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbiIsI
 }
 ```
 - Response
+
 If user has admin role, will category save and return HTTP 200 OK
+
 If user has not admin role, response http code would be HTTP 403 FORBIDDEN
 
 
 ### Product
 #### GET api/product/{productId}
-- Header
-```sh
-header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbiIsInJvbGVzIjpbeyJhdXRob3JpdHkiOiJST0xFX0FETUlOIn1dLCJpYXQiOjE1OTU0NTE3NDgsImV4cCI6MTU5NTQ1NTM0OH0.Q2oOQjXxm2sSY77STxP6iFglI6LZ-qmIQpaEdTK0D0o' 
-```
-- Request
+- Response
+HTTP 200 OK
  ```json
 {
-    "name" : "Test Product 1",
-    "amount" : 133.5,
+    "id": 2,
+    "createdDate": "2020-07-23T00:53:58.664344",
+    "name": "Test Product 1",
+    "description": null,
+    "amount": 133.50,
+    "quantity": 22,
     "categoryId": 1,
-    "quantity" : 22
+    "productImageList": []
 }
 ```
-- Response
- HTTP 200 OK
-if there is invalid token or there isn't token, response http code would be HTTP 403 FORBIDDEN
 
 #### POST api/product/
 - Header
@@ -159,8 +159,8 @@ header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbiIsI
     "quantity" : 22
 }
 ```
-- Response
- HTTP 200 OK
+- Response HTTP 200 OK
+
 if there is invalid token or there isn't token, response http code would be HTTP 403 FORBIDDEN
 
 
