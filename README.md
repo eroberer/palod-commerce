@@ -20,7 +20,7 @@ docker-compose up
 ```
 2 - Run application
 ```sh
-mvn springboot:run
+mvn spring-boot:run
 ```
 
 ## Database Diagram
