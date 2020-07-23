@@ -14,6 +14,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.TestPropertySource;
 
 import com.palod.commerce.TestUtil;
 import com.palod.commerce.api.exception.ApiException;
@@ -23,6 +24,7 @@ import com.palod.commerce.domain.user.repository.UserRepository;
 import com.palod.commerce.domain.user.service.UserService;
 
 @SpringBootTest
+@TestPropertySource(locations = "classpath:application-test.properties")
 public class UserServiceTest {
 
 	@Autowired
@@ -36,7 +38,7 @@ public class UserServiceTest {
 
 	@Test
 	public void givenExistEmail_whenFindByEmail_thenReturnUser() {
-		Long userId = 1L;
+		Long userId = 19999L;
 		String email = "test@test";
 		String password = "test";
 
@@ -52,7 +54,7 @@ public class UserServiceTest {
 
 	@Test
 	public void givenExistEmail_whenLoadUserByUsername_thenReturnSpringUser() {
-		Long userId = 1L;
+		Long userId = 199999L;
 		String email = "test@test";
 		String password = "test";
 		String roleName = "BASIC";
@@ -72,7 +74,7 @@ public class UserServiceTest {
 
 	@Test
 	public void givenCorrectEmailAndPassword_whenLogin_thenReturnUser() throws ApiException {
-		Long userId = 1L;
+		Long userId = 19999L;
 		String email = "test@test";
 		String password = "test";
 		String roleName = "BASIC";
@@ -89,7 +91,7 @@ public class UserServiceTest {
 
 	@Test
 	public void givenCorrectEmailAndWrongPassword_whenLogin_thenThrowsApiException() throws ApiException {
-		Long userId = 1L;
+		Long userId = 19999L;
 		String email = "test@test";
 		String password = "test";
 		String roleName = "BASIC";

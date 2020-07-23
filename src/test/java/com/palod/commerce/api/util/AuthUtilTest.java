@@ -13,6 +13,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.test.context.TestPropertySource;
 
 import com.google.common.collect.Lists;
 import com.palod.commerce.TestUtil;
@@ -23,6 +24,7 @@ import com.palod.commerce.domain.user.dto.UserDto;
 import com.palod.commerce.domain.user.service.UserService;
 
 @SpringBootTest
+@TestPropertySource(locations = "classpath:application-test.properties")
 public class AuthUtilTest {
 
 	@Autowired
