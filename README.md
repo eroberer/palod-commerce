@@ -68,7 +68,7 @@ Product: find
 }
 ```
 - Response
- HTTP 200 OK
+ ``HTTP 200 OK``
 
 #### POST api/user/login
 - Request
@@ -79,7 +79,7 @@ Product: find
 }
 ```
 - Response
- HTTP 200 OK
+ ``HTTP 200 OK``
  ```json
 {
     "timestamp": "2020-07-23T00:12:44.378149",
@@ -91,7 +91,7 @@ Product: find
 ### Category
 #### GET api/category/
 - Response
- HTTP 200 OK
+ ``HTTP 200 OK``
  ```json
 [
     {
@@ -131,7 +131,7 @@ Otherwise (user has not admin role), the response is ``HTTP 403 FORBIDDEN``
 ### Product
 #### GET api/product/{productId}
 - Response
-HTTP 200 OK
+``HTTP 200 OK``
  ```json
 {
     "id": 2,
@@ -159,9 +159,9 @@ header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbiIsI
     "quantity" : 22
 }
 ```
-- Response HTTP 200 OK
+- Response ``HTTP 200 OK``
 
-if there is invalid token or there isn't token, response http code would be HTTP 403 FORBIDDEN
+if there is invalid token or there isn't token, response http code would be ``HTTP 403 FORBIDDEN``
 
 
 ## All enpoints
