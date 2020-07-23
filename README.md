@@ -1,8 +1,8 @@
 # Palod E-Commerce Application Service
-This application provides user role based category and product management.
+Polad E-commerce has been created to make category and product management according to the logged user`s role.
 
 ## Installation
-1 - Clone this project
+1 - Clone the project
 ```sh
 git clone https://github.com/eroberer/palod-commerce.git
 cd palod-commerce
@@ -40,7 +40,7 @@ Product: find, save, update, delete
 Category: find
 Product: find, save (just owner), update (just owner), delete (just owner)
 ```
-- Not Register User
+- Not Registered User
  ```sh 
 Category: find
 Product: find
@@ -123,9 +123,9 @@ header 'Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbiIsI
 ```
 - Response
 
-If user has admin role, will category save and return HTTP 200 OK
+If a user has admin role, the category is saved then returns ``HTTP 200 OK``
 
-If user has not admin role, response http code would be HTTP 403 FORBIDDEN
+Otherwise (user has not admin role), the response is ``HTTP 403 FORBIDDEN``
 
 
 ### Product
