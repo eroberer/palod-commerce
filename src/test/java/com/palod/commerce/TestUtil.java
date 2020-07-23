@@ -61,6 +61,7 @@ public class TestUtil {
 
 	public static Role createDummyRole(String roleName) {
 		Role role = new Role();
+		role.setId(1899L);
 		role.setName(roleName);
 		return role;
 	}

@@ -10,6 +10,7 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.TestPropertySource;
 
 import com.google.common.collect.Lists;
 import com.palod.commerce.TestUtil;
@@ -19,6 +20,7 @@ import com.palod.commerce.domain.product.repository.ProductRepository;
 import com.palod.commerce.domain.product.service.ProductService;
 
 @SpringBootTest
+@TestPropertySource(locations = "classpath:application-test.properties")
 public class ProductServiceTest {
 
 	@Autowired

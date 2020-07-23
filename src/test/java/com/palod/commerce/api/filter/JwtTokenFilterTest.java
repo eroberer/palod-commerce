@@ -20,11 +20,13 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.test.context.TestPropertySource;
 
 import com.google.common.collect.Lists;
 import com.palod.commerce.api.util.JwtTokenUtil;
 
 @SpringBootTest
+@TestPropertySource(locations = "classpath:application-test.properties")
 public class JwtTokenFilterTest {
 
 	@Autowired

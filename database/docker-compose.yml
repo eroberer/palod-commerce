@@ -5,6 +5,6 @@ services:
   image: mysql:8.0.17
   environment:
    MYSQL_ROOT_PASSWORD: secret
-   MYSQL_DATABASE: PALOD
+   MYSQL_DATABASE: palod
   ports:
    - "3306:3306"
